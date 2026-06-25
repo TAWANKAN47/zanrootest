@@ -21,7 +21,7 @@ function RangeMerge(range: Range[]):Range[] {
 
   function subRange (inputRange: Range[], negativeRange: Range[]): Range[] {
     const ranges = RangeMerge(inputRange);
-    const negatives = RangeMerge([negativeRange]);
+    const negatives = RangeMerge(negativeRange);
     const result: Range[] = [];
     let indexNeg = 0;
 
@@ -53,6 +53,9 @@ function RangeMerge(range: Range[]):Range[] {
     return result;
   }
 
-  console.log (subRange([[1, 5],[2,20]]));
+  console.log (subRange([[1, 5],[2,20]], [[3, 7]]));
+  console.log(subRange([[3,15],[2,20],[5,10]],[[3,5],[8,10]]));
+  console.log(subRange([[1,7],[5,20],[25,100]],[[6,9],[8,11],[30,50]]));
+  console.log(subRange([[1,7],[10,20],[25,100]],[[2,5],[11,21],[30,50]]));
 
 
